@@ -11,7 +11,7 @@ namespace New_project_AP
         Random rand = new Random();
 
         public string name;
-        public int coins = 30000;
+        public int coins = 300;
         public int health = 10;
         public int damage = 1;
         public int armorvalue = 0;
@@ -118,7 +118,7 @@ namespace New_project_AP
                 Console.WriteLine("You look around the old house to find some weapon and find a sword in old house...");
                 Console.WriteLine();
                 Console.ReadKey();
-                Combat(false, "Human Rogue", 1, 4);
+                Combat(false, "Human Rogue", 3, 7);
             }
             public static void BasicFightEncounter()
             {
@@ -240,6 +240,7 @@ namespace New_project_AP
                             }
                             Console.WriteLine(value: $"You obtain {potionV} health");
                             Program.currentPlayer.health += potionV;
+                            Program.currentPlayer.potion--;
                             Console.WriteLine("As you are occupied, the " + n + " advanced and struck.");
                             int damage = (p / 2) - Program.currentPlayer.armorvalue;
                             if (damage < 0)
